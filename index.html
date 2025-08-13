@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 이탈리아 휠체어 여행 가이드북</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .guidebook {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .cover {
+            background: linear-gradient(135deg, #008c45 0%, #cd212a 50%, #008c45 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .cover h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        
+        .cover .subtitle {
+            font-size: 24px;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+        
+        .cover .dates {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .navigation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-tab:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        
+        .nav-tab.active {
+            background: #2196f3;
+            color: white;
+            border-color: #2196f3;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .city-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .city-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .city-header {
+            border-bottom: 3px solid #2196f3;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .city-header h2 {
+            font-size: 36px;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .city-header .schedule {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .attraction-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .attraction-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+        }
+        
+        .attraction-header h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .attraction-header .type {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .attraction-body {
+            padding: 20px;
+        }
+        
+        .attraction-image-placeholder {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .attraction-image-placeholder .icon {
+            font-size: 72px;
+            opacity: 0.9;
+        }
+        
+        .attraction-image-placeholder .label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+            background: rgba(0,0,0,0.5);
+            padding: 5px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .info-item .icon {
+            flex-shrink: 0;
+            width: 24px;
+            font-size: 18px;
+        }
+        
+        .info-item .text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .accessibility-section {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .accessibility-section h4 {
+            color: #2e7d32;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .accessibility-list {
+            list-style: none;
+            font-size: 14px;
+        }
+        
+        .accessibility-list li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .accessibility-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .tips-section {
+            background: #fff3e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .tips-section h3 {
+            color: #e65100;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tips-list {
+            list-style: none;
+        }
+        
+        .tips-list li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            font-size: 14px;
+        }
+        
+        .transport-info {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .transport-info h3 {
+            color: #1565c0;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .transport-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .transport-item strong {
+            color: #1976d2;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .must-badge {
+            display: inline-block;
+            background: #f44336;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .overview-section {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .overview-section h3 {
+            color: #424242;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .overview-section p {
+            color: #616161;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+        
+        /* 도시별 고유 색상 테마 */
+        .venice-theme {
+            background: linear-gradient(135deg, #00acc1 0%, #0288d1 100%);
+        }
+        
+        .florence-theme {
+            background: linear-gradient(135deg, #d4a574 0%, #8d6e63 100%);
+        }
+        
+        .pisa-theme {
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+        }
+        
+        .civita-theme {
+            background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);
+        }
+        
+        .rome-theme {
+            background: linear-gradient(135deg, #ab47bc 0%, #8e24aa 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .cover h1 {
+                font-size: 32px;
+            }
+            
+            .cover .subtitle {
+                font-size: 20px;
+            }
+            
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+        
+        @media print {
+            .navigation {
+                display: none;
+            }
+            
+            .city-section {
+                display: block !important;
+                page-break-after: always;
+            }
+        }
+        
+        .emergency-info {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .emergency-info h3 {
+            color: #c62828;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .emergency-item {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .emergency-item strong {
+            color: #f44336;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .useful-phrases {
+            background: #f3e5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .useful-phrases h3 {
+            color: #7b1fa2;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .phrase-item {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid #9c27b0;
+        }
+        
+        .phrase-item .italian {
+            font-weight: bold;
+            color: #7b1fa2;
+            font-size: 16px;
+        }
+        
+        .phrase-item .korean {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .phrase-item .pronunciation {
+            color: #999;
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="guidebook">
+        <div class="cover">
+            <h1>🇮🇹 이탈리아 휠체어 여행 가이드북</h1>
+            <div class="subtitle">베네치아 • 피렌체 • 피사 • 아레초 • 로마</div>
+            <div class="dates">2025년 10월 7일 ~ 14일</div>
+        </div>
+        
+        <nav class="navigation">
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showSection('overview')">개요</button>
+                <button class="nav-tab" onclick="showSection('venice')">베네치아</button>
+                <button class="nav-tab" onclick="showSection('florence')">피렌체</button>
+                <button class="nav-tab" onclick="showSection('pisa')">피사</button>
+                <button class="nav-tab" onclick="showSection('civita')">치비타</button>
+                <button class="nav-tab" onclick="showSection('rome')">로마</button>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <!-- 개요 섹션 -->
+            <div id="overview" class="city-section active">
+                <div class="city-header">
+                    <h2>여행 개요</h2>
+                    <div class="schedule">8일간의 이탈리아 북부-중부 여행</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>🎯 여행의 하이라이트</h3>
+                    <p>
+                        이번 여행은 이탈리아의 정수를 경험하는 8일간의 특별한 여정입니다. 
+                        물의 도시 베네치아에서 시작해 르네상스의 요람 피렌체, 기울어진 탑의 피사, 
+                        토스카나의 숨은 보석 아레초를 거쳐 영원의 도시 로마까지, 
+                        이탈리아의 역사와 문화, 예술을 깊이 있게 체험하실 수 있습니다.
+                    </p>
+                </div>
+                
+                <div class="emergency-info">
+                    <h3>🚨 긴급 연락처</h3>
+                    <div class="emergency-grid">
+                        <div class="emergency-item">
+                            <strong>긴급전화 (통합)</strong>
+                            <div>112</div>
+                        </div>
+                        <div class="emergency-item">
+                            <strong>의료 응급</strong>
+                            <div>118</div>
+                        </div>
+                        <div class="emergency-item">
+                            <strong>경찰</strong>
+                            <div>113</div>
+                        </div>
+                        <div class="emergency-item">
+                            <strong>주이탈리아 한국대사관</strong>
+                            <div>+39-06-802-461</div>
+                        </div>
+                        <div class="emergency-item">
+                            <strong>관광 핫라인</strong>
+                            <div>+39-06-3996-7575</div>
+                        </div>
+                        <div class="emergency-item">
+                            <strong>장애인 지원 (FISH)</strong>
+                            <div>+39-06-7885-0806</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="useful-phrases">
+                    <h3>🗣️ 유용한 이탈리아어 표현</h3>
+                    <div class="phrase-grid">
+                        <div class="phrase-item">
+                            <div class="italian">Dove è l'ascensore?</div>
+                            <div class="korean">엘리베이터는 어디에 있나요?</div>
+                            <div class="pronunciation">도베 에 라쎈소레?</div>
+                        </div>
+                        <div class="phrase-item">
+                            <div class="italian">C'è accesso per sedia a rotelle?</div>
+                            <div class="korean">휠체어 접근이 가능한가요?</div>
+                            <div class="pronunciation">체 아체소 페르 세디아 아 로텔레?</div>
+                        </div>
+                        <div class="phrase-item">
+                            <div class="italian">Bagno per disabili</div>
+                            <div class="korean">장애인 화장실</div>
+                            <div class="pronunciation">바뇨 페르 디사빌리</div>
+                        </div>
+                        <div class="phrase-item">
+                            <div class="italian">Ho bisogno di aiuto</div>
+                            <div class="korean">도움이 필요합니다</div>
+                            <div class="pronunciation">오 비소뇨 디 아유토</div>
+                        </div>
+                        <div class="phrase-item">
+                            <div class="italian">Ingresso per disabili</div>
+                            <div class="korean">장애인 입구</div>
+                            <div class="pronunciation">인그레소 페르 디사빌리</div>
+                        </div>
+                        <div class="phrase-item">
+                            <div class="italian">Posso avere assistenza?</div>
+                            <div class="korean">도움을 받을 수 있나요?</div>
+                            <div class="pronunciation">포쏘 아베레 아시스텐짜?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 베네치아 섹션 -->
+            <div id="venice" class="city-section">
+                <div class="city-header">
+                    <h2>베네치아 (Venezia)</h2>
+                    <div class="schedule">📅 10월 7-8일 (Day 1-2) | 숙소: Hotel Villa Pannonia</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>도시 소개</h3>
+                    <p>
+                        118개의 작은 섬으로 이루어진 베네치아는 운하와 다리의 도시입니다. 
+                        휠체어 이용자에게는 도전적인 도시이지만, 주요 관광지 대부분이 접근 가능하도록 개선되었습니다.
+                        수상버스(바포레토)를 이용한 이동이 가장 편리합니다.
+                    </p>
+                </div>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>산 마르코 대성당 <span class="must-badge">필수</span></h3>
+                            <div class="type">종교 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder venice-theme">
+                                <div class="icon">⛪</div>
+                                <div class="label">St. Mark's Basilica</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    828년, 베네치아 상인들이 알렉산드리아에서 성 마르코의 유해를 훔쳐와 안치하면서 시작된 이 대성당은 '황금의 교회'라 불립니다. 
+                                    천장과 벽면을 뒤덮은 8,500㎡의 황금 모자이크는 구약과 신약의 이야기를 담고 있어 '돌에 쓰인 성경'이라고도 불립니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">09:30-17:00 (일요일 14:00-16:30)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">무료 (박물관 €7, 종탑 €10)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>좌측 입구로 휠체어 진입 가능</li>
+                                    <li>내부 평지, 장애인 화장실 있음</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>두칼레 궁전 <span class="must-badge">필수</span></h3>
+                            <div class="type">역사 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder venice-theme">
+                                <div class="icon">🏛️</div>
+                                <div class="label">Doge's Palace</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    베네치아 공화국 1,100년 역사의 심장부였던 이곳은 도제의 거처이자 정부 청사, 법원, 감옥이 한 건물에 있는 독특한 구조입니다.
+                                    '탄식의 다리'로 연결된 감옥에는 카사노바가 갇혔다가 극적으로 탈출한 일화가 전해집니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">09:00-19:00 (마지막 입장 18:00)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">€25 (장애인 및 동반 1인 €14)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>엘리베이터 2대, 전 구역 접근 가능</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>리알토 다리 주변</h3>
+                            <div class="type">랜드마크</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder venice-theme">
+                                <div class="icon">🌉</div>
+                                <div class="label">Rialto Bridge</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1591년 완공된 이 석조 다리는 대운하를 가로지르는 가장 오래된 다리입니다. 
+                                    셰익스피어의 '베니스의 상인'에서 샤일록이 돈을 빌려주던 곳이 바로 이 다리 근처였죠.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>다리는 계단, 바포레토로 다리 아래 통과 추천</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>페기 구겐하임 미술관</h3>
+                            <div class="type">미술관</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder venice-theme">
+                                <div class="icon">🎨</div>
+                                <div class="label">Peggy Guggenheim Collection</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    미국의 예술 후원가 페기 구겐하임이 30년간 베네치아에 살며 수집한 20세기 현대미술의 보고입니다.
+                                    피카소, 달리, 몬드리안, 폴록 등 거장들의 작품이 있습니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">10:00-18:00 (화요일 휴관)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">€16 (장애인 €9)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>완전 배리어프리, 정원도 접근 가능</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 피렌체 섹션 -->
+            <div id="florence" class="city-section">
+                <div class="city-header">
+                    <h2>피렌체 (Firenze)</h2>
+                    <div class="schedule">📅 10월 8-9일 (Day 2-3) | 숙소: Villa Nerioli</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>도시 소개</h3>
+                    <p>
+                        르네상스의 발상지 피렌체는 도시 전체가 하나의 거대한 미술관입니다. 
+                        역사 지구는 대부분 평지이며, 주요 관광지들이 가까이 모여 있어 이동이 편리합니다.
+                    </p>
+                </div>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>우피치 미술관 <span class="must-badge">필수</span></h3>
+                            <div class="type">미술관</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder florence-theme">
+                                <div class="icon">🖼️</div>
+                                <div class="label">Uffizi Gallery</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    메디치 가문의 코시모 1세가 1560년 행정 사무소(Uffizi)로 건설한 이 건물은 1581년부터 유럽 최초의 공공 미술관이 되었습니다.
+                                    보티첼리의 '비너스의 탄생'과 '봄', 레오나르도 다 빈치의 '수태고지' 등 르네상스 최고 걸작들이 시대순으로 전시되어 있습니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">08:15-18:50 (월요일 휴관)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">€20 (장애인 무료, 동반 1인 할인)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>2번 문 전용 입구, 엘리베이터 완비</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>두오모 (산타 마리아 델 피오레) <span class="must-badge">필수</span></h3>
+                            <div class="type">종교 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder florence-theme">
+                                <div class="icon">⛪</div>
+                                <div class="label">Florence Cathedral</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1296년 착공해 140년 만에 완성된 이 대성당의 돔은 건축사의 기적입니다.
+                                    브루넬레스키는 나무 지지대 없이 직경 45m의 돔을 올리는 혁신적인 이중 돔 구조를 발명했습니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">10:00-17:00 (일요일 13:30-16:45)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>우측 입구 진입, 내부 평지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>아카데미아 미술관</h3>
+                            <div class="type">미술관</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder florence-theme">
+                                <div class="icon">🗿</div>
+                                <div class="label">Michelangelo's David</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    미켈란젤로의 '다비드'(1504)가 있는 이곳은 원래 미술 아카데미였습니다.
+                                    5.17m 높이의 다비드상은 원래 두오모 지붕에 올릴 예정이었지만 너무 아름다워 시뇨리아 광장에 설치되었다가 1873년 보호를 위해 이곳으로 옮겨졌습니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>엘리베이터, 넓은 통로</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>베키오 다리 (Ponte Vecchio)</h3>
+                            <div class="type">랜드마크</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder florence-theme">
+                                <div class="icon">🌉</div>
+                                <div class="label">Ponte Vecchio</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1345년 건설된 이 다리는 제2차 세계대전 때 히틀러의 명령으로 피렌체의 모든 다리가 폭파될 때 유일하게 살아남았습니다. 
+                                    원래 정육점이 있었지만 1593년 메디치 가문이 악취 때문에 금세공인들만 영업하도록 했습니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>평탄한 다리, 휠체어 통행 가능</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 피사 섹션 -->
+            <div id="pisa" class="city-section">
+                <div class="city-header">
+                    <h2>피사 (Pisa)</h2>
+                    <div class="schedule">📅 10월 9일 (Day 3) | 당일 방문</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>도시 소개</h3>
+                    <p>
+                        기울어진 탑으로 유명한 피사는 작고 아담한 도시입니다. 
+                        기적의 광장(Campo dei Miracoli)에 주요 명소가 집중되어 있어 짧은 시간에 효율적인 관광이 가능합니다.
+                    </p>
+                </div>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>피사의 사탑 <span class="must-badge">필수</span></h3>
+                            <div class="type">랜드마크</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder pisa-theme">
+                                <div class="icon">🗼</div>
+                                <div class="label">Leaning Tower of Pisa</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1173년 착공 당시부터 기울기 시작한 이 종탑은 피사 해군력의 상징이었습니다.
+                                    갈릴레오가 1589년 이곳에서 두 개의 다른 무게 구슬을 떨어뜨려 자유낙하 법칙을 증명했다는 전설이 있습니다.
+                                    2001년 대대적인 보수 공사로 기울기를 5.5도에서 3.97도로 줄였습니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">09:00-20:00 (계절별 상이)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">€20 (탑 등반)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>탑 등반 불가, 외부 관람 가능</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>피사 대성당</h3>
+                            <div class="type">종교 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder pisa-theme">
+                                <div class="icon">⛪</div>
+                                <div class="label">Pisa Cathedral</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1063년 팔레르모 해전 승리를 기념해 건설된 이 대성당은 피사 로마네스크 양식의 걸작입니다.
+                                    갈릴레오가 사용했다는 '갈릴레오의 램프'가 있으며, 이 램프의 진동을 관찰하며 진자의 등시성 법칙을 발견했다고 합니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>측면 경사로, 내부 평지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>세례당</h3>
+                            <div class="type">종교 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder pisa-theme">
+                                <div class="icon">🏛️</div>
+                                <div class="label">Pisa Baptistery</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1152년 착공한 이탈리아 최대의 세례당으로, 내부의 완벽한 음향은 '천사의 합창'이라 불립니다.
+                                    30초간 지속되는 에코는 단일 음이 화음처럼 들리게 합니다.
+                                    매시 30분마다 관리인이 음향 시연을 합니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>임시 경사로, 1층만 관람</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 치비타 디 바뇨레조 섹션 -->
+            <div id="civita" class="city-section">
+                <div class="city-header">
+                    <h2>치비타 디 바뇨레조 (Civita di Bagnoregio)</h2>
+                    <div class="schedule">📅 10월 9일 (Day 3) | 당일 방문</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>도시 소개</h3>
+                    <p>
+                        '죽어가는 도시(La città che muore)'라 불리는 치비타 디 바뇨레조는 
+                        2,500년 역사를 간직한 언덕 위의 중세 마을입니다.
+                        화산재 응회암 위에 세워진 이 마을은 침식으로 인해 서서히 무너지고 있으며,
+                        현재 주민은 단 10여 명에 불과합니다.
+                    </p>
+                </div>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>치비타 전망대와 다리 <span class="must-badge">필수</span></h3>
+                            <div class="type">랜드마크</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder civita-theme">
+                                <div class="icon">🏰</div>
+                                <div class="label">Civita di Bagnoregio</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    에트루리아인들이 기원전 500년경 세운 이 도시는 로마로 가는 길목이었습니다.
+                                    300미터 길이의 보행자 전용 다리는 1965년 건설되었으며,
+                                    이 다리만이 마을과 외부를 연결하는 유일한 통로입니다.
+                                    미야자키 하야오 감독이 '천공의 성 라퓨타'의 영감을 받은 곳으로도 유명합니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">24시간 (다리 통행료 09:00-19:00)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">다리 통행료 €5</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>다리는 경사가 있어 휠체어 이동 어려움</li>
+                                    <li>전망대에서 감상 추천</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>산 도나토 성당</h3>
+                            <div class="type">종교 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder civita-theme">
+                                <div class="icon">⛪</div>
+                                <div class="label">San Donato Church</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    7세기에 지어진 이 성당은 마을의 중심입니다.
+                                    15세기 도나텔로 학파의 목조 십자가상이 있으며,
+                                    성당 앞 광장은 중세 시대 시장이 열렸던 곳입니다.
+                                    성당 종탑에서 울리는 종소리는 골짜기에 메아리쳐 특별한 울림을 만듭니다.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 로마 섹션 -->
+            <div id="rome" class="city-section">
+                <div class="city-header">
+                    <h2>로마 (Roma)</h2>
+                    <div class="schedule">📅 10월 10-14일 (Day 4-8) | 숙소: H10 Roma Città → Gioia's Flat</div>
+                </div>
+                
+                <div class="overview-section">
+                    <h3>도시 소개</h3>
+                    <p>
+                        2,800년의 역사를 자랑하는 영원의 도시 로마는 도시 전체가 박물관입니다.
+                        고대 로마 유적부터 바로크 분수까지, 각 시대의 걸작들이 곳곳에 있습니다.
+                    </p>
+                </div>
+                
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>콜로세움 <span class="must-badge">필수</span></h3>
+                            <div class="type">고대 유적</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">🏛️</div>
+                                <div class="label">Colosseum</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    서기 72년 베스파시아누스 황제가 착공해 80년 완공된 이 거대한 원형 경기장은 5만 명을 수용할 수 있었습니다.
+                                    개막식은 100일간 계속되었고, 9,000마리의 야생동물이 희생되었다고 합니다.
+                                    지하에는 80개의 엘리베이터가 있어 검투사와 맹수를 무대로 올려보냈습니다.
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">⏰</span>
+                                <span class="text">09:00-19:15 (계절별 상이)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">💶</span>
+                                <span class="text">€18 (장애인 및 동반 1인 무료)</span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>전용 입구, 엘리베이터로 1-2층 접근</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>바티칸 박물관 & 시스티나 성당 <span class="must-badge">필수</span></h3>
+                            <div class="type">박물관/종교</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">🎨</div>
+                                <div class="label">Sistine Chapel</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    54개 갤러리, 9마일의 전시 공간을 가진 세계 최대 박물관 중 하나입니다.
+                                    시스티나 성당 천장화는 미켈란젤로가 1508-1512년 4년간 서서 고개를 젖힌 자세로 그렸습니다.
+                                    '천지창조' 중 '아담의 창조'에서 신의 뒤 배경은 인간의 뇌 단면과 똑같은데,
+                                    이는 미켈란젤로가 해부학을 통해 '신이 인간에게 지성을 준다'는 의미를 숨긴 것입니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>전 구역 접근 가능, 다수 엘리베이터</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>판테온</h3>
+                            <div class="type">고대 건축물</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">🏛️</div>
+                                <div class="label">Pantheon</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    기원후 126년 하드리아누스 황제가 완성한 이 '모든 신들의 전당'은 
+                                    1,900년이 지난 지금도 세계에서 가장 큰 비보강 콘크리트 돔을 자랑합니다.
+                                    직경 9m의 천장 구멍(오쿨루스)은 유일한 광원이자 신과 인간을 연결하는 통로를 상징합니다.
+                                    매년 4월 21일 정오(로마 건국일)에 태양 빛이 오쿨루스를 통해 정확히 입구를 비춥니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>정문 진입, 내부 완전 평지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>트레비 분수 <span class="must-badge">필수</span></h3>
+                            <div class="type">바로크 건축</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">⛲</div>
+                                <div class="label">Trevi Fountain</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1762년 완성된 로마 최대의 바로크 분수로, 해신 넵투누스가 두 마리 해마가 끄는 조개 전차를 타는 모습입니다.
+                                    매일 약 3,000유로의 동전이 던져지며, 이는 모두 가톨릭 자선 단체에 기부됩니다.
+                                    동전 던지기 전통: 첫 번째 동전은 로마 재방문, 두 번째는 사랑, 세 번째는 결혼을 약속한다고 합니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>Via del Lavatore에서 계단 없이 접근</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>스페인 계단 & 광장</h3>
+                            <div class="type">랜드마크</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">🏛️</div>
+                                <div class="label">Spanish Steps</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    1725년 완성된 135개의 계단은 프랑스 외교관의 유산으로 건설되었지만 
+                                    '스페인 계단'이라 불리는 이유는 아래 스페인 광장에 스페인 대사관이 있었기 때문입니다.
+                                    봄이면 진달래로 장식되는 이 계단은 로마에서 가장 로맨틱한 장소입니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>계단 접근 불가, 광장과 분수는 평지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="attraction-header">
+                            <h3>보르게세 갤러리 & 공원</h3>
+                            <div class="type">미술관/공원</div>
+                        </div>
+                        <div class="attraction-body">
+                            <div class="attraction-image-placeholder rome-theme">
+                                <div class="icon">🌳</div>
+                                <div class="label">Villa Borghese</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="icon">📖</span>
+                                <span class="text">
+                                    <strong>역사와 이야기:</strong><br>
+                                    보르게세 추기경의 17세기 별장이었던 이곳은 '로마의 중앙공원'입니다.
+                                    갤러리에는 베르니니의 조각 걸작들과 티치아노, 카라바조의 회화가 있습니다.
+                                    특히 베르니니의 '아폴로와 다프네'는 대리석으로 만든 것이 믿기지 않을 정도로 섬세합니다.
+                                </span>
+                            </div>
+                            
+                            <div class="accessibility-section">
+                                <h4>♿ 접근성</h4>
+                                <ul class="accessibility-list">
+                                    <li>완전 배리어프리, 공원 포장로</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transport-info">
+                    <h3>🚇 로마 내 이동</h3>
+                    <div class="transport-item">
+                        <strong>지하철</strong>
+                        주요 역에만 엘리베이터 설치. A선(바티칸 방향)과 B선(콜로세움)이 비교적 접근성 좋음.
+                    </div>
+                    <div class="transport-item">
+                        <strong>버스</strong>
+                        대부분 저상버스. 590, 495번 등 주요 관광지 순환 노선 추천.
+                    </div>
+                    <div class="transport-item">
+                        <strong>택시</strong>
+                        장애인 택시는 06-0609로 예약. 일반 택시도 트렁크에 휠체어 수납 가능.
+                    </div>
+                </div>
+                
+                <div class="tips-section">
+                    <h3>💡 로마 팁</h3>
+                    <ul class="tips-list">
+                        <li>Roma Pass (48시간 €32)는 대중교통 무제한 + 박물관 할인 혜택이 있습니다.</li>
+                        <li>많은 관광지가 온라인 예약 시 장애인 무료 입장이 가능하니 사전 확인하세요.</li>
+                        <li>트라스테베레 지역은 저녁 식사하기 좋지만 자갈길이 많아 주의가 필요합니다.</li>
+                        <li>포로 로마노는 고르지 않은 길이 많아 가장자리에서 관람을 추천합니다.</li>
+                        <li>캄포 데 피오리 시장은 오전에 방문하면 신선한 식재료를 구경할 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // 모든 섹션 숨기기
+            const sections = document.querySelectorAll('.city-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 모든 탭 비활성화
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 선택된 섹션 보이기
+            document.getElementById(sectionId).classList.add('active');
+            
+            // 선택된 탭 활성화
+            event.target.classList.add('active');
+            
+            // 스크롤 위치 조정
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
